@@ -22,8 +22,10 @@ variable "policies_attachment" {
   default = []
   description = "policies to attach list"
 }
+
 variable "tags" {
   type = object({
+    Name = string
     Author      = string
     Environment = string
     Provisioner = string
@@ -31,6 +33,7 @@ variable "tags" {
   })
   description = "base tags required in every resource"
 }
+
 variable "principal_type" {
   type = string
   default = "Service"
