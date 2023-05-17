@@ -1,5 +1,5 @@
 resource "aws_iam_role" "default" {
-  name = "${var.name}-role"
+  name = var.role_name
 
   assume_role_policy = <<EOF
 {
@@ -17,10 +17,6 @@ resource "aws_iam_role" "default" {
 }
 EOF
 
-tags = merge(
-    var.tags,
-    {
-        "Name" = "${var.name}-role"
-    }
-)
+tags = var.tags
+
 }

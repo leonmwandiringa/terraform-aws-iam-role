@@ -1,4 +1,4 @@
-variable "name" {
+variable "role_name" {
   type = string
   description = "role & policy name"
 }
@@ -7,6 +7,7 @@ variable "principal_name" {
   type = string
   description = "principal name"
 }
+
 
 variable "policies" {
   type = list(object({
@@ -31,7 +32,7 @@ variable "tags" {
     Provisioner = string
     Region      = string
   })
-  description = "base tags required in every resource"
+  description = "tags for iam role"
 }
 
 variable "principal_type" {
