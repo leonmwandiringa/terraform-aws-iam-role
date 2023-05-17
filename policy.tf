@@ -1,6 +1,6 @@
 resource "aws_iam_role_policy" "default" {
   count = length(var.policies) > 0 ? length(var.policies) : 0
-  name = "${var.name}-policy"
+  name = "${var.role_name}-policy"
   role = aws_iam_role.default.id
 
   policy = <<EOF
